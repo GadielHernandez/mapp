@@ -1,0 +1,1 @@
+<p>View admin</p>
