@@ -6,5 +6,10 @@
   <title>Merma</title>
 
   <!-- Bootstrap core CSS -->
+  <link href="css/style.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Navbar</a>
+  </nav>

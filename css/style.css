@@ -1,0 +1,14 @@
+.h-100{
+  height: 100% !important;
+}
+.nav-left{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  padding-top: 10px !important;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  border-right: 1px solid #eee;
+}
