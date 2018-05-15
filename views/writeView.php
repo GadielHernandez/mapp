@@ -32,29 +32,53 @@
             </select>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Guardar</button>
       </form>
+      <button id="save" type="submit" class="btn btn-primary">Guardar</button>
     </div>
   </div>
   <hr>
   <div class="row">
     <div class="col-12">
       <h3>Registrar producto</h3>
+      <div id="addAlert" class="alert alert-success" role="alert"  style="display: none;">
+        Registrado!
+      </div>
       <form>
         <div class="form-row">
           <div class="form-group col-md-11">
             <label for="name">Nombre del producto</label>
-            <input type="text" name="name" class="form-control" value="">
+            <input type="text" name="addProdName" class="form-control" value="">
           </div>
         </div>
         <div class="form-row">
           <div class="col-md-11">
             <label for="desc">Descripcion</label>
-            <textarea name="name" class="form-control" rows="5" cols="80"></textarea>
+            <textarea name="addProdDesc" class="form-control" rows="5" cols="80"></textarea>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Guardar</button>
       </form>
+      <button id="addProduct" type="submit" class="btn btn-primary">Guardar</button>
     </div>
   </div>
 </div>
+</body>
+<<?php require_once 'views/footer.php'; ?>
+<script type="text/javascript">
+  $( document ).ready(function() {
+
+    $( "#addProduct" ).click(function() {
+      obj = {
+        query: 'InsertProducts',
+        name: $( 'input[name=addProdName]' ).val(),
+        description: $( 'textarea[name=addProdDesc]' ).val(),
+      }
+      response = ajaxJson(obj);
+      response.done(function ajaxDone(data) {
+        console.log("here");
+        $("#addAlert").show(1000);
+        $("#addAlert").delay(3000).hide(1000);
+      })
+    });
+
+  });
+</script>
