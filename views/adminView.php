@@ -11,7 +11,92 @@
     <main class="col-sm-12 ml-sm-auto col-md-10 pt-3" role="main">
       <div class="tab-content" id="v-pills-tabContent">
         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-          <p>home</p>
+          <div class="container">
+            <div class="row">
+              <h1 class="display-4">Bienvenido</h1>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-12">
+                <h3>Pructos registrados</h3>
+                <table class="table table-hover table-striped">
+                  <thead>
+                    <tr>
+                      <th>Nombre</th>
+                      <th>Descripcion</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Producto ejemplo</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </td>
+                    </tr>
+                    <tr>
+                      <td>Producto ejemplo</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </td>
+                    </tr>
+                    <tr>
+                      <td>Producto ejemplo</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </td>
+                    </tr>
+                    <tr>
+                      <td>Producto ejemplo</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </td>
+                    </tr>
+                    <tr>
+                      <td>Producto ejemplo</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </td>
+                    </tr>
+                    <tr>
+                      <td>Producto ejemplo</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </td>
+                    </tr>
+                    <tr>
+                      <td>Producto ejemplo</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </td>
+                    </tr>
+                    <tr>
+                      <td>Producto ejemplo</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </td>
+                    </tr>
+                    <tr>
+                      <td>Producto ejemplo</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </td>
+                    </tr>
+                    <tr>
+                      <td>Producto ejemplo</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </td>
+                    </tr>
+                    <tr>
+                      <td>Producto ejemplo</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </td>
+                    </tr>
+                    <tr>
+                      <td>Producto ejemplo</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </td>
+                    </tr>
+                    <tr>
+                      <td>Producto ejemplo</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </td>
+                    </tr>
+                    <tr>
+                      <td>Producto ejemplo</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </td>
+                    </tr>
+                    <tr>
+                      <td>Producto ejemplo</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </td>
+                    </tr>
+                    <tr>
+                      <td>Producto ejemplo</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
         </div>
         <div class="tab-pane fade" id="v-pills-products" role="tabpanel" aria-labelledby="v-pills-profile-tab">
           <?php include 'views/writeView.php'; ?>
