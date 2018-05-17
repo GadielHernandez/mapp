@@ -20,6 +20,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
       $statement->bindParam(':description',$data['description'], PDO::PARAM_STR);
       $statement->execute();
       break;
+
+    case 'InsertMerma':
+      $statement = $con->prepare("INSERT INTO percent(id_product,percent) VALUES (:id,:percent)");
+      $statement->bindParam(':id', $data['id'], PDO::PARAM_INT);
+      $statement->bindParam(':percent',$data['percent'], PDO::PARAM_STR);
+      $statement->execute();
+      break;
   }
 }
 ?>

@@ -8,6 +8,7 @@
   <!-- Bootstrap core CSS -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
   <nav class="navbar navbar-dark bg-dark">
