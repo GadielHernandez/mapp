@@ -13,4 +13,7 @@
 <body>
   <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Navbar</a>
+    <div class="my-2 my-lg-0">
+      <button type="btn btn-dark" name="button"></button>
+    </div>
   </nav>

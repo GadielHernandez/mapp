@@ -47,7 +47,7 @@
   </div>
 </div>
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalGraph" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -56,7 +56,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" id="bodyChart">
         <canvas id="chart" width="100px" height="100px"></canvas>
       </div>
       <div class="modal-footer">
@@ -78,70 +78,46 @@ $( document ).ready(function() {
 
     $(document).on ("click", ".recordProduct", function() {
       var id = $(this).attr('id');
-      $('#exampleModalCenter').modal('show');
+      $('#modalGraph').modal('show');
+      setChart(id);
     });
 
-    function setChart(data,cnt) {
-      var watts = [];
-      var volts = [];
-      var amps = [];
-      var power = [];
+    function setChart(id) {
+      var perc = [];
       var lbs = [];
       $("#chart").remove();
-      $("#containerChart").append('<canvas id="chart" width="100px" height="100px"></canvas>');
-      //totalRead = cnt + 19;
-      i = data.length - 1;
-      n = 0;
-      offMeter = 0;
-      while (i>= 0) {
-        //if((parseInt(read.kWh_Tot) + parseInt(read.RMS_Volts_Ln_1) + parseInt(read.Amps_Ln_1) + parseInt(read.Power_Factor_Ln_1)) > 0) {
-        //$.each(data, function(i, read){
-        console.log(i);
-          if(parseInt(data[i].status)  >= 0){
-            lbs.push(data[i].timestamp.substring(11, 16));
-            watts.push(parseFloat(data[i].watts_tot));
-            volts.push(parseFloat(data[i].volt_tot));
-            amps.push(parseFloat(data[i].amp_tot));
-            power.push(parseFloat(data[i].power_factor));
-          }
-          i = i - 1;
-        //})
+      $("#bodyChart").append('<canvas id="chart" width="100px" height="100px"></canvas>');
+      obj = {
+        query: 'getPercents',
+        id: id
       }
-        var ctx = document.getElementById("chart").getContext("2d");
-        var chart = new Chart(ctx, {
-          type: 'line',
-        data: {
-            labels: lbs,
-            datasets: [{
-                label: "Watts ",
-                fill: false,
-                borderColor: 'rgb(255, 247, 61)',
-                data: watts,
-            },
-            {
-                label: "Volts",
-                fill: false,
-                borderColor: 'rgb(14, 214, 189)',
-                data: volts,
-            },
-            {
-                label: "Amps",
-                fill: false,
-                borderColor: 'rgb(255, 99, 132)',
-                data: amps,
-            },
-            {
-                label: "Power factor ",
-                fill: false,
-                borderColor: 'rgb(54, 182, 49)',
-                data: power,
-            }
-          ]
-        },
+      response = ajaxJson(obj);
+      response.done(function ajaxDone(data) {
+        i = data.length - 1;
+        while (i>= 0) {
+            lbs.push(data[i].name);
+            perc.push(parseFloat(data[i].percent));
+            i = i - 1;
+        }
+          var ctx = document.getElementById("chart").getContext("2d");
+          var chart = new Chart(ctx, {
+            type: 'line',
+          data: {
+              labels: lbs,
+              datasets: [{
+                  label: "Porcentaje ",
+                  fill: false,
+                  borderColor: 'rgb(255, 247, 61)',
+                  data: perc,
+              }
+            ]
+          },
 
-        // Configuration options go here
-        options: {}
-        });
+          // Configuration options go here
+          options: {}
+          });
+      });
+
 
     }
     function fillTableProducts() {
@@ -150,7 +126,6 @@ $( document ).ready(function() {
       }
       response = ajaxJson(obj);
       response.done(function ajaxDone(data) {
-        console.log(data);
         $("#tbBodyProducts").remove();
         $("#tableProducts").append('<tbody id ="tbBodyProducts"');
         $.each(data, function(i, product){

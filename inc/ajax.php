@@ -27,6 +27,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
       $statement->bindParam(':percent',$data['percent'], PDO::PARAM_STR);
       $statement->execute();
       break;
+
+    case 'getPercents':
+      $sql = 'SELECT products.id_products, products.name, percent.percent FROM products INNER JOIN percent ON products.id_products = percent.id_product WHERE products.id_products = ' . $data['id'];
+      $result = Query::execute($sql);
+      header('Content-Type: application/json');
+      echo json_encode($result);
+      break;
+
+    case 'calculateMerma':
+      $sql = 'SELECT AVG(percent) FROM percent WHERE id_product = ' . $data['id'];
+      $result = Query::execute($sql);
+      header('Content-Type: application/json');
+      echo json_encode($result);
+      break;
   }
 }
 ?>

@@ -70,7 +70,7 @@
   $( document ).ready(function() {
 
     fillComboProducts();
-
+    
     function fillComboProducts() {
       obj = {
         query: 'SelectProducts',
