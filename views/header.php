@@ -12,8 +12,10 @@
 </head>
 <body>
   <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <div class="my-2 my-lg-0">
-      <button type="btn btn-dark" name="button"></button>
-    </div>
+    <a class="navbar-brand" href="#">mapp</a>
+    <?php if (isset($_SESSION['user_id'])): ?>
+      <div class="my-2 my-lg-0">
+        <button onclick="location.href='logout.php';" type="button" class="btn btn-dark"><i class="material-icons">power_settings_new</i></button>
+      </div>
+    <?php endif; ?>
   </nav>

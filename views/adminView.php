@@ -40,7 +40,7 @@
           <?php include 'views/readView.php'; ?>
         </div>
         <div class="tab-pane fade" id="v-pills-users" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-
+          <?php include 'views/editUsers.php'; ?>
         </div>
       </div>
     </main>
@@ -95,7 +95,7 @@ $( document ).ready(function() {
       response.done(function ajaxDone(data) {
         i = data.length - 1;
         while (i>= 0) {
-            lbs.push(data[i].name);
+            lbs.push('');
             perc.push(parseFloat(data[i].percent));
             i = i - 1;
         }

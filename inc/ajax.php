@@ -41,6 +41,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
       header('Content-Type: application/json');
       echo json_encode($result);
       break;
+
+    case 'SelectUsers':
+      $sql = 'SELECT user_id, name, privileges FROM users';
+      $result = Query::execute($sql);
+      header('Content-Type: application/json');
+      echo json_encode($result);
+      break;
+
+    case 'updateUser':
+      $statement = $con->prepare("UPDATE users SET privileges = :privileges WHERE user_id = :id");
+      $statement->bindParam(':id', $data['id'], PDO::PARAM_INT);
+      $statement->bindParam(':privileges',$data['privileges'], PDO::PARAM_STR);
+      $statement->execute();
+      break;
   }
 }
 ?>
